@@ -6,17 +6,15 @@ using System.Threading.Tasks;
 
 namespace IndianStateCensusAnalyser
 {
-    public class CensusAnalyserException : Exception
+
+    public class StateCodeException : Exception
     {
         public enum ExceptionType
         {
-            FILE_INCORRECT,
-            FILE_NOT_EXISTS, 
-            HEADER_INCORRECT, 
-            DELIMETER_INCORRECT
+            FILE_INCORRECT, FILE_NOT_EXISTS, HEADER_INCORRECT, DELIMETER_INCORRECT
         }
         public ExceptionType type;
-        public CensusAnalyserException(ExceptionType type, string message) : base(message)
+        public StateCodeException(ExceptionType type, string message) : base(message)
         {
             this.type = type;
         }
